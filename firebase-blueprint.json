@@ -1,0 +1,88 @@
+{
+  "entities": {
+    "User": {
+      "title": "User Profile",
+      "description": "Basic information about the student",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "studentId": { "type": "string" },
+        "email": { "type": "string", "format": "email" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["name", "email"]
+    },
+    "Subject": {
+      "title": "Period / Subject",
+      "description": "A class period in the timetable",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "time": { "type": "string" },
+        "day": { "type": "string" },
+        "isTracked": { "type": "boolean" },
+        "userId": { "type": "string" }
+      },
+      "required": ["name", "day", "userId"]
+    },
+    "Attendance": {
+      "title": "Attendance record",
+      "description": "Tracking for a specific subject",
+      "type": "object",
+      "properties": {
+        "subjectId": { "type": "string" },
+        "totalClasses": { "type": "integer" },
+        "attendedClasses": { "type": "integer" },
+        "userId": { "type": "string" }
+      },
+      "required": ["subjectId", "userId"]
+    },
+    "Assignment": {
+      "title": "Assignment",
+      "description": "A task or project with a deadline",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "subjectId": { "type": "string" },
+        "deadline": { "type": "string", "format": "date-time" },
+        "isCompleted": { "type": "boolean" },
+        "userId": { "type": "string" }
+      },
+      "required": ["title", "subjectId", "userId"]
+    },
+    "Note": {
+      "title": "Note",
+      "description": "A quick text note",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "userId": { "type": "string" }
+      },
+      "required": ["title", "userId"]
+    }
+  },
+  "firestore": {
+    "users/{userId}": {
+      "schema": "User",
+      "description": "User profile data"
+    },
+    "users/{userId}/subjects/{subjectId}": {
+      "schema": "Subject",
+      "description": "User's timetable periods"
+    },
+    "users/{userId}/attendance/{attendanceId}": {
+      "schema": "Attendance",
+      "description": "User's attendance tracking data"
+    },
+    "users/{userId}/assignments/{assignmentId}": {
+      "schema": "Assignment",
+      "description": "User's academic tasks"
+    },
+    "users/{userId}/notes/{noteId}": {
+      "schema": "Note",
+      "description": "User's personal notes"
+    }
+  }
+}
