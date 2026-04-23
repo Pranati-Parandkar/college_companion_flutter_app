@@ -1,20 +1,40 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+#  College Companion App
 
-# Run and deploy your AI Studio app
+##  Overview
+College Companion is a student productivity mobile application designed to simplify and organize daily college activities. It helps students manage their timetable, track attendance, keep up with assignments, and store notes—all in one place.
 
-This contains everything you need to run your app locally.
+---
 
-View your app in AI Studio: https://ai.studio/apps/b4078130-79b2-44d6-8a52-9913bc72e959
+##  Features
 
-## Run Locally
+###  Timetable Management
+- Add and view weekly class schedules  
+- Displays subject, time, and room details  
 
-**Prerequisites:**  Node.js
+###  Attendance Tracker
+- Track attendance for each subject  
+- Automatically calculates percentage  
+- Helps maintain required attendance  
 
+###  Assignment Manager
+- Add assignments with deadlines  
+- View upcoming and overdue tasks  
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+###  Notes Section
+- Store and manage personal notes  
+- Easy access and editing  
+
+###  Dashboard (Home Screen)
+- Central hub to navigate all features  
+- Clean and user-friendly interface  
+
+---
+
+##  Tech Stack
+
+- **Frontend:** Flutter (Dart)  
+- **IDE:** VS Code  
+- **State Management:** setState (basic)  
+- **Storage:** Local storage (can be extended using shared_preferences or Firebase)
+
+---
